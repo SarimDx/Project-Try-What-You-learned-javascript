@@ -1,0 +1,419 @@
+:root {
+  --main-color: #5d4954;
+  --second-color: whitesmoke;
+  --main-Darkcolor: #552208;
+  --second-Darkcolor: #083b55;
+  --main-writing-color: whitesmoke;
+  --writing-color: black;
+}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--second-color);
+}
+ul {
+  list-style: none;
+}
+.nav-links li a,
+.burger,
+.logo,
+.portfolio .more,
+.portfolio .less,
+.shuffle li {
+  cursor: pointer;
+}
+html {
+  scroll-behavior: smooth;
+}
+/* ? globel sattings */
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+.section {
+  padding: 100px;
+}
+.main-heading {
+  text-align: center;
+}
+.main-heading h2 {
+  font-weight: normal;
+  font-size: 40px;
+  position: relative;
+  margin-bottom: 60px;
+  text-transform: capitalize;
+  color: var(--writing-color);
+}
+.main-heading h2::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 2px;
+  background-color: var(--writing-color);
+  bottom: -30px;
+  width: 120px;
+}
+.main-heading h2::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -38px;
+  height: 14px;
+  width: 14px;
+  border: 2px solid #333;
+  border-radius: 50%;
+  background-color: white;
+}
+.main-heading p {
+  width: 550px;
+  margin: 0 auto 100px;
+  max-width: 100%;
+  line-height: 2;
+  color: var(--writing-color);
+}
+
+/* ? End globel */
+
+/* ? Start  navBar */
+nav {
+  position: fixed;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 8vh;
+  background-color: var(--main-color);
+  width: 100%;
+  transition: 0.5s;
+  z-index: 5;
+}
+.logo {
+  color: var(--main-writing-color);
+  /* color: var(--second-color); */
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 20px;
+}
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  width: 30%;
+}
+@media (max-width: 1024px) {
+  .nav-links {
+    width: 50%;
+  }
+}
+.nav-links li {
+  list-style: none;
+}
+
+.nav-links li a {
+  color: var(--main-writing-color);
+  /* color: var(--second-color); */
+  text-decoration: none;
+  letter-spacing: 1px;
+  font-weight: 600;
+  font-size: 14px;
+}
+.nav-links li i {
+  color: var(--second-color);
+  text-decoration: none;
+  letter-spacing: 1px;
+  font-weight: 900;
+  font-size: 18px;
+  transition: 0.5s;
+}
+.nav-links li.Mode {
+  width: 50px;
+}
+.nav-links li i.DarkMode {
+  color: black;
+  width: 100%;
+  text-align: center;
+  display: block;
+}
+.nav-links li i.lightMode {
+  color: white;
+  width: 100%;
+  text-align: center;
+  display: none;
+}
+.burger {
+  display: none;
+}
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: var(--second-color);
+  margin: 5px;
+  transition: 0.5s;
+}
+/* ? End  navBar */
+
+/* ? Start Responsive  navBar */
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+  .nav-links {
+    position: absolute;
+    right: 0;
+    top: 8vh;
+    height: 92vh;
+    background-color: var(--main-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    transform: translateX(100%);
+    transition: 0.5s;
+  }
+  .nav-links li a {
+    font-size: 18px;
+  }
+  .nav-links li i {
+    font-size: 20px;
+  }
+  .nav-links li {
+    opacity: 0%;
+  }
+  .burger {
+    display: block;
+    transition: 0.5s;
+  }
+}
+/* ? End Responsive  navBar */
+
+/* ? Start annimation For navbar*/
+.nav-active {
+  transform: translateX(0);
+}
+@keyframes navLinksFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+/* ? End annimation For navbar*/
+
+/* ? Start annimation For The 3 lines*/
+.toggle {
+  transform: translateX(30px);
+  transition: 0.5s;
+}
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+  transition: 0.5s;
+}
+.toggle .line2 {
+  opacity: 0;
+  transition: 0.5s;
+}
+.toggle .line3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+  transition: 0.5s;
+}
+/* ? End annimation For The 3 lines*/
+
+/* ? Start annimation For The navBar "hides when user Scrolls"*/
+.Just_text {
+  padding-top: 8vh;
+  align-items: center;
+  margin: 0 15%;
+  line-height: 1.6;
+  font-size: 18px;
+  color: var(--writing-color);
+}
+.navHidden {
+  transform: translateY(-8vh);
+  box-shadow: 0;
+}
+/* ? End annimation For The navBar "hides when user Scrolls"*/
+
+/* ? Start button That scrolls up "arrow Up" */
+.button_apear {
+  display: none;
+}
+.button {
+  position: fixed;
+  right: 5%;
+  bottom: 5%;
+  width: 45px;
+  height: 45px;
+  transition: 0.7s;
+  z-index: 3;
+}
+.button button {
+  width: 100%;
+  height: 100%;
+  color: whitesmoke;
+  background-color: var(--main-color);
+  border: 1px solid var(--main-color);
+  border-radius: 15%;
+  transition: 0.7s;
+}
+
+.button button i {
+  font-size: 20px;
+  font-weight: bold;
+  transition: 0.7s;
+}
+.button button:hover {
+  color: var(--main-color);
+  background-color: var(--second-color);
+  border: 3px solid var(--main-color);
+}
+.button button:hover i {
+  font-size: 25px;
+}
+.Button {
+  opacity: 0%;
+  box-shadow: 0;
+  right: -5%;
+  bottom: -5%;
+  transition: 0.7s;
+}
+/* ? End button That scrolls up "arrow Up" */
+
+/* ? Start Portfolio */
+.portfolio {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.portfolio .shuffle {
+  display: flex;
+  justify-content: center;
+}
+.portfolio .shuffle li {
+  padding: 10px;
+}
+.portfolio .shuffle li.active {
+  background-color: var(--main-color);
+  color: white;
+  transition: 0.5s;
+}
+.portfolio .imgs-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 60px;
+}
+.portfolio .imgs-container .box {
+  position: relative;
+  overflow: hidden;
+}
+.portfolio .imgs-container .box:hover .caption {
+  bottom: 0;
+}
+.portfolio .imgs-container .box:hover img {
+  transform: rotate(-3deg) scale(1.1);
+}
+.portfolio .imgs-container .box img {
+  cursor: -webkit-grabbing;
+}
+.portfolio .imgs-container .box img {
+  max-width: 100%;
+  transition: 0.4s;
+  height: 100%;
+}
+.portfolio .imgs-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-column-gap: 6px;
+  grid-row-gap: 6px;
+}
+.portfolio .imgs-container .box .caption {
+  position: absolute;
+  left: 0;
+  padding: 20px;
+  background-color: white;
+  width: 100%;
+  transition: 0.4s;
+  bottom: -100%;
+}
+.portfolio .imgs-container .box .caption h4 {
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+.portfolio .imgs-container .box .caption p {
+  font-weight: normal;
+  color: var(--main-color);
+}
+.portfolio .more {
+  background-color: var(--main-color);
+  color: white;
+  padding: 15px 20px;
+  display: block;
+  width: fit-content;
+  margin: 30px auto;
+  text-decoration: none;
+  text-transform: capitalize;
+  border-radius: 10%;
+  transition: 0.7s;
+}
+.portfolio .more:hover {
+  color: var(--main-color);
+  background-color: var(--second-color);
+  border: 3px solid var(--main-color);
+}
+.portfolio .less {
+  background-color: var(--main-color);
+  color: white;
+  padding: 15px 20px;
+  display: none;
+  width: fit-content;
+  margin: 30px auto;
+  text-decoration: none;
+  text-transform: capitalize;
+  border-radius: 10%;
+  transition: 0.7s;
+}
+.portfolio .less:hover {
+  color: var(--main-color);
+  background-color: var(--second-color);
+  border: 3px solid var(--main-color);
+}
+/* ? End Portfolio */
+
+/* ? Start JavaScript Part "Portfolio" */
+.More {
+  display: none;
+}
+.none {
+  display: none;
+}
+.block {
+  display: block;
+}
+/* ? End JavaScript Part "Portfolio" */
