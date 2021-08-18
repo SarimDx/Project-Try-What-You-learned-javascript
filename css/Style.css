@@ -3,7 +3,7 @@
   --second-color: whitesmoke;
   --main-Darkcolor: #552208;
   --second-Darkcolor: #083b55;
-  --main-writing-color: whitesmoke;
+  --main-writing-color: #ffffff;
   --writing-color: black;
 }
 * {
@@ -16,6 +16,7 @@
 body {
   font-family: "Poppins", sans-serif;
   background-color: var(--second-color);
+  padding-bottom: 500px;
 }
 ul {
   list-style: none;
@@ -417,3 +418,130 @@ nav {
   display: block;
 }
 /* ? End JavaScript Part "Portfolio" */
+
+/* ? Start A New Testimonials */
+.testimonials {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  height: 100%;
+  position: relative;
+  background-image: url(../Img/infinite-loop-02.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+.testimonials::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(20, 70, 80, 0.2);
+}
+.testimonials .container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.testimonials .container .main_text {
+  padding-bottom: 50px;
+}
+.testimonials .container .main_text h3 {
+  text-align: center;
+  color: var(--main-writing-color);
+  font-size: 42px;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  padding-bottom: 20px;
+}
+.testimonials .container .main_text p {
+  text-align: center;
+  color: var(--main-writing-color);
+  line-height: 1.8;
+  font-size: 18px;
+  font-family: "Poppins", sans-serif;
+}
+@media (max-width: 768px) {
+  .testimonials .container .main_text h3 {
+    font-size: 32px;
+  }
+  .testimonials .container .main_text p {
+    line-height: 1.6;
+    font-size: 18px;
+  }
+}
+/* ? Start testimonials Boxes */
+.testimonials .container .boxes {
+  display: flex;
+  justify-content: space-around;
+}
+.testimonials .container .boxes .box {
+  display: flex;
+  flex-direction: column;
+  margin: 0px 15px;
+  width: 300px;
+}
+@media (max-width: 992px) {
+}
+.testimonials .container .boxes .box .image {
+  display: flex;
+}
+.testimonials .container .boxes .box .image img {
+  width: 110px;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+}
+.testimonials .container .boxes .box .Text {
+  width: 100%;
+}
+.testimonials .container .boxes .box .Text blockquote {
+  margin: 0 0 10px;
+  line-height: 1.6;
+  letter-spacing: 0.1ch;
+  color: var(--main-writing-color);
+  font-style: normal;
+  font-weight: lighter;
+  font-size: 15px;
+  font-family: "Raleyway", sans-serif;
+  text-align: start;
+}
+.testimonials .container .boxes .box .Text figcaption {
+  text-align: end;
+  color: var(--main-writing-color);
+  font-size: 16px;
+  font-weight: lighter;
+  font-family: "Raleyway", sans-serif;
+}
+
+/* ? three_dots */
+.testimonials .container .three_dots {
+  padding: 50px 0;
+  position: relative;
+  height: 100%;
+}
+.testimonials .container .three_dots .span {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+.testimonials .container .three_dots .span span {
+  width: 15px;
+  height: 15px;
+  background-color: gray;
+  border: 1px solid gray;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.testimonials .container .three_dots span:hover:nth-child(2),
+.testimonials .container .three_dots span:hover:nth-child(3) {
+  background-color: whitesmoke;
+  border: 1px solid white;
+}
+.testimonials .container .three_dots span.active {
+  border: 1px solid white;
+  background-color: whitesmoke;
+}
+/* ? End A New Testimonials */
