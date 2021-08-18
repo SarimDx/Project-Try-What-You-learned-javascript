@@ -184,3 +184,28 @@ lessButton2.addEventListener("click", () => {
   moreButton.style.display = "block";
   lessButton2.style.display = "none";
 });
+
+
+// ? Testimonials Scroll-X
+let SButton1 = document.querySelector(".firstdote");
+let SButton2 = document.querySelector(".seconddote");
+let SButton3 = document.querySelector(".theredote");
+let dote_one = document.querySelector(".testimonials .container .boxes .dote_one")
+let dote_two = document.querySelector(".testimonials .container .boxes .dote_two")
+let dote_Three = document.querySelector(".testimonials .container .boxes .dote_Three")
+
+SButton1.addEventListener("click", () => {
+  dote_one.style.display = "flex"
+  dote_two.style.display = "none"
+  dote_Three.style.display = "none"
+});
+SButton2.addEventListener("click", () => {
+  dote_one.style.display = "none"
+  dote_two.style.display = "flex"
+  dote_Three.style.display = "none"
+});
+SButton3.addEventListener("click", () => {
+  dote_one.style.display = "none"
+  dote_two.style.display = "none"
+  dote_Three.style.display = "flex"
+});

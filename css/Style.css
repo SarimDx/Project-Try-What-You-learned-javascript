@@ -430,7 +430,6 @@ nav {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  overflow: hidden;
 }
 .testimonials::before {
   content: "";
@@ -476,28 +475,33 @@ nav {
 /* ? Start testimonials Boxes */
 .testimonials .container .boxes {
   display: flex;
-  justify-content: space-around;
+  overflow-x: hidden;
+  justify-content: center;
 }
-.testimonials .container .boxes .box {
+.testimonials .container .boxes .dote {
+  display: flex;
+  justify-content: space-between;
+  height: 253px;
+}
+.testimonials .container .boxes .dote .box {
+  position: relative;
   display: flex;
   flex-direction: column;
   margin: 0px 15px;
   width: 300px;
 }
-@media (max-width: 992px) {
-}
-.testimonials .container .boxes .box .image {
+.testimonials .container .boxes .dote .box .image {
   display: flex;
 }
-.testimonials .container .boxes .box .image img {
+.testimonials .container .boxes .dote .box .image img {
   width: 110px;
   border-radius: 50%;
   margin: 0 auto 20px;
 }
-.testimonials .container .boxes .box .Text {
+.testimonials .container .boxes .dote .box .Text {
   width: 100%;
 }
-.testimonials .container .boxes .box .Text blockquote {
+.testimonials .container .boxes .dote .box .Text blockquote {
   margin: 0 0 10px;
   line-height: 1.6;
   letter-spacing: 0.1ch;
@@ -508,7 +512,7 @@ nav {
   font-family: "Raleyway", sans-serif;
   text-align: start;
 }
-.testimonials .container .boxes .box .Text figcaption {
+.testimonials .container .boxes .dote .box .Text figcaption {
   text-align: end;
   color: var(--main-writing-color);
   font-size: 16px;
@@ -544,4 +548,28 @@ nav {
   border: 1px solid white;
   background-color: whitesmoke;
 }
+
 /* ? End A New Testimonials */
+/* ? Start Javascript Part */
+.testimonials .container .boxes .dote_two {
+  display: none;
+}
+.testimonials .container .boxes .dote_Three {
+  display: none;
+}
+/* ? End Javascript Part */
+@media (max-width: 600px) {
+  .testimonials .container .boxes {
+    display: flex;
+    overflow-x: scroll;
+  }
+  .testimonials .container .boxes .dote_two {
+    display: flex;
+  }
+  .testimonials .container .boxes .dote_Three {
+    display: flex;
+  }
+  .testimonials .container .three_dots {
+    display: none;
+  }
+}
