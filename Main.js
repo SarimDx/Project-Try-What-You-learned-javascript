@@ -18,22 +18,11 @@ let navSlide = () => {
     });
     // ? Burger Animation
     burger.classList.toggle("toggle");
+    // ? Dont mind me please
+    navDis.classList.remove("transparent");
   });
 };
 navSlide();
-
-// ? NavBar Desapear When Scrolling
-let navDis = document.querySelector(".bossNav");
-let lastScroll = window.scrollY;
-
-window.addEventListener("scroll", () => {
-  if (lastScroll < window.scrollY) {
-    navDis.classList.add("navHidden");
-  } else {
-    navDis.classList.remove("navHidden");
-  }
-  lastScroll = window.scrollY;
-});
 
 // ? Button  apear When Scrolling
 let Button = document.querySelector(".button");
@@ -75,27 +64,25 @@ LButton.addEventListener("click", () => {
 let AllButton = document.querySelector(".AllButton");
 let All = document.querySelectorAll(".box");
 let AnimeButton = document.querySelector(".AnimeButton");
-let Anime = document.querySelectorAll(".Anime");
 let PhotoButton = document.querySelector(".PhotoButton");
-let Photo = document.querySelectorAll(".Photo");
 let NatureButton = document.querySelector(".NatureButton");
-let Nature = document.querySelectorAll(".Nature");
 let ArtButton = document.querySelector(".ArtButton");
-let Art = document.querySelectorAll(".Art");
 let moreButton = document.querySelector(".more");
 let lessButton = document.querySelectorAll(".More");
 let lessButton2 = document.querySelector(".less");
+
+let tryy = document.querySelectorAll(".shuffle li");
+
 AllButton.addEventListener("click", () => {
   for (let i = 0; i < All.length; i++) {
     All[i].style.display = "block";
   }
   moreButton.style.display = "none";
   lessButton2.style.display = "block";
+  tryy.forEach(function(b) {
+    b.classList.remove("active");
+  })
   AllButton.classList.add("active");
-  AnimeButton.classList.remove("active");
-  PhotoButton.classList.remove("active");
-  NatureButton.classList.remove("active");
-  ArtButton.classList.remove("active");
 });
 
 AnimeButton.addEventListener("click", () => {
@@ -109,11 +96,10 @@ AnimeButton.addEventListener("click", () => {
   }
   moreButton.style.display = "none";
   lessButton2.style.display = "none";
-  AllButton.classList.remove("active");
+  tryy.forEach(function(b) {
+    b.classList.remove("active");
+  })
   AnimeButton.classList.add("active");
-  PhotoButton.classList.remove("active");
-  NatureButton.classList.remove("active");
-  ArtButton.classList.remove("active");
 });
 PhotoButton.addEventListener("click", () => {
   console.log("Photo");
@@ -126,11 +112,10 @@ PhotoButton.addEventListener("click", () => {
   }
   moreButton.style.display = "none";
   lessButton2.style.display = "none";
-  AllButton.classList.remove("active");
-  AnimeButton.classList.remove("active");
+  tryy.forEach(function(b) {
+    b.classList.remove("active");
+  })
   PhotoButton.classList.add("active");
-  NatureButton.classList.remove("active");
-  ArtButton.classList.remove("active");
 });
 NatureButton.addEventListener("click", () => {
   console.log("Nature");
@@ -143,11 +128,10 @@ NatureButton.addEventListener("click", () => {
   }
   moreButton.style.display = "none";
   lessButton2.style.display = "none";
-  AllButton.classList.remove("active");
-  AnimeButton.classList.remove("active");
-  PhotoButton.classList.remove("active");
+  tryy.forEach(function(b) {
+    b.classList.remove("active");
+  })
   NatureButton.classList.add("active");
-  ArtButton.classList.remove("active");
 });
 ArtButton.addEventListener("click", () => {
   console.log("Art");
@@ -160,12 +144,12 @@ ArtButton.addEventListener("click", () => {
   }
   moreButton.style.display = "none";
   lessButton2.style.display = "none";
-  AllButton.classList.remove("active");
-  AnimeButton.classList.remove("active");
-  PhotoButton.classList.remove("active");
-  NatureButton.classList.remove("active");
+  tryy.forEach(function(b) {
+    b.classList.remove("active");
+  })
   ArtButton.classList.add("active");
 });
+
 
 // ? More/less Button
 moreButton.addEventListener("click", () => {
@@ -195,6 +179,7 @@ let dote_two = document.querySelector(".testimonials .container .boxes .dote_two
 let dote_Three = document.querySelector(".testimonials .container .boxes .dote_Three")
 
 SButton1.addEventListener("click", () => {
+
   dote_one.style.display = "flex"
   dote_two.style.display = "none"
   dote_Three.style.display = "none"
@@ -209,3 +194,21 @@ SButton3.addEventListener("click", () => {
   dote_two.style.display = "none"
   dote_Three.style.display = "flex"
 });
+
+
+// ? Start decoration Of Nav Bar
+let navDis = document.querySelector(".bossNav");
+  window.addEventListener("scroll", () => {
+    if (window.scrollY >= 100) {
+      navDis.classList.add("translate");
+    } else {
+      navDis.classList.remove("translate");
+    }
+  });
+  window.addEventListener("scroll", () => {
+    if (window.scrollY >= 100) {
+      navDis.classList.add("translate");
+    } else {
+      navDis.classList.remove("translate");
+    }
+  });
