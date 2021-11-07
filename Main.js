@@ -18,12 +18,9 @@ let navSlide = () => {
     });
     // ? Burger Animation
     burger.classList.toggle("toggle");
-    // ? Dont mind me please
-    navDis.classList.remove("transparent");
   });
 };
 navSlide();
-
 // ? Button  apear When Scrolling
 let Button = document.querySelector(".button");
 window.addEventListener("scroll", () => {
@@ -33,15 +30,11 @@ window.addEventListener("scroll", () => {
   } else {
     Button.classList.remove("Button");
   }
-
   // ? Click Button Action
-  let lastBcscroll = window.scrollY;
   Button.addEventListener("click", () => {
-    window.scrollBy(0, -lastBcscroll);
-    lastBcscroll = window.scrollY;
+    scrollTo(0,0);
   });
 });
-
 // ? Dark/light Mode
 let DButton = document.querySelector(".DarkMode");
 let LButton = document.querySelector(".lightMode");
@@ -205,10 +198,14 @@ let navDis = document.querySelector(".bossNav");
       navDis.classList.remove("translate");
     }
   });
-  window.addEventListener("scroll", () => {
-    if (window.scrollY >= 100) {
-      navDis.classList.add("translate");
-    } else {
-      navDis.classList.remove("translate");
-    }
-  });
+// ? Logo Reload The Page
+let logo = document.querySelector(".logo");
+
+logo.addEventListener("click" , () => {
+  location.href = "http://127.0.0.1:5500/index.html";
+})
+
+// let home = document.querySelector() 
+// if(location.href = "/#portfolio") {
+//   console.log("hi")
+// }
